@@ -8,10 +8,14 @@ app.secret_key = 'clave_secreta_segura'  # Necesario para usar sesiones
 
 conn_str = (
     "Driver={ODBC Driver 17 for SQL Server};"
-    "Server=localhost;"
+    "Server=BIGDATA.mssql.somee.com;"
     "Database=BIGDATA;"
-    "Trusted_Connection=yes;"
+    "Uid=AlbeiroRincon_SQLLogin_1;"
+    "Pwd=3mo6vrckwr;"
+    "TrustServerCertificate=Yes;"
+    "Encrypt=no;"
 )
+
 
 # 🟢 Login
 @app.route('/', methods=['GET', 'POST'])
