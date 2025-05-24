@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import pyodbc
 import math
+import os  
 
-app = Flask(__name__)
+app = Flask(_name_)
 app.secret_key = 'clave_secreta_segura'  # Necesario para usar sesiones
 
 conn_str = (
@@ -92,5 +93,6 @@ def informe():
         return redirect(url_for('home'))
     return render_template("informe.html", username=session['username'])
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if _name_ == "_main_":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(debug=False, host="0.0.0.0", port=port)
